@@ -1,0 +1,95 @@
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10vw;
+
+  > aside.image {
+    > img {
+      width: 20vw;
+    }
+  }
+}
+
+section.intro {
+  align-items: center;
+
+  > aside.image {
+    > img {
+      width: 40vw;
+    }
+  }
+}
+
+section.about-me {
+  gap: 5vw;
+}
+
+section.skills {
+  gap: 5vw;
+
+  > aside.details > .skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1rem;
+
+    > span {
+      --icon-size: 2.5rem;
+
+      text-align: center;
+
+      > i,
+      > img {
+        margin-bottom: 0.5rem;
+      }
+
+      > i {
+        font-size: var(--icon-size);
+        color: hsl(255, 98%, 80%);
+      }
+
+      > img {
+        height: calc(var(--icon-size) - 4.5px);
+      }
+
+      > p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+section.references {
+  > aside.details {
+    > a {
+      padding: 0.5rem;
+      background: hsl(255, 98%, 80%);
+      border-radius: 5px;
+      color: hsl(0, 0%, 9%);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    > section {
+      height: auto;
+      padding-bottom: 3rem;
+
+      > aside.image {
+        > img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 767px) and (orientation: landscape) {
+  section.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

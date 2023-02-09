@@ -1,0 +1,61 @@
+[
+  {
+    "name": "ems",
+    "images": [
+      {
+        "src": "/assets/img/reference/ems-01.png",
+        "alt": "EMS image number 1"
+      },
+      {
+        "src": "/assets/img/reference/ems-02.png",
+        "alt": "EMS image number 2"
+      },
+      {
+        "src": "/assets/img/reference/ems-03.png",
+        "alt": "EMS image number 3"
+      }
+    ]
+  },
+  {
+    "name": "ex",
+    "images": [
+      {
+        "src": "/assets/img/reference/ex-01.png",
+        "alt": "Exalon image number 1"
+      },
+      {
+        "src": "/assets/img/reference/ex-02.png",
+        "alt": "Exalon image number 2"
+      }
+    ]
+  },
+  {
+    "name": "tenant",
+    "images": [
+      {
+        "src": "/assets/img/reference/tenant-01.png",
+        "alt": "Tenancy Tracker image number 1"
+      },
+      {
+        "src": "/assets/img/reference/tenant-02.png",
+        "alt": "Tenancy Tracker image number 2"
+      },
+      {
+        "src": "/assets/img/reference/tenant-03.png",
+        "alt": "Tenancy Tracker image number 3"
+      },
+      {
+        "src": "/assets/img/reference/tenant-04.png",
+        "alt": "Tenancy Tracker image number 4"
+      },
+      {
+        "src": "/assets/img/reference/tenant-05.png",
+        "alt": "Tenancy Tracker image number 5"
+      },
+      {
+        "src": "/assets/img/reference/tenant-06.png",
+        "alt": "Tenancy Tracker image number 6"
+      }
+    ]
+  }
+]

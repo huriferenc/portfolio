@@ -1,1 +1,205 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color: hsl(216, 100%, 15%);
+$secondary-color: hsl(216, 100%, 23%);
+$font-color: hsl(217, 6%, 74%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:host,
+:root {
+  font-size: 18px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $primary-color;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  color: $font-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  letter-spacing: 0em;
+  line-height: 1.5;
+  margin-bottom: 0.7rem;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+  }
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+a.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+
+  > img {
+    width: auto;
+    height: 38px;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 3rem;
+  background-color: $secondary-color;
+  box-shadow: 0 1px 10px #0000001f, 0 4px 5px #00000024;
+
+  a {
+    font-weight: 500;
+  }
+
+  > .mobile-toggle-btn {
+    display: none;
+    font-size: 1.5rem;
+  }
+
+  > ul.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  > section {
+    width: 100%;
+    min-height: 95vh;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secondary-color;
+  box-shadow: 0 1px 10px #0000001f, 0 4px 5px #00000024;
+  padding: 1rem;
+
+  > aside.signature {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  > aside.links {
+    text-align: right;
+
+    > a {
+      margin: 0.2rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    justify-content: space-between;
+
+    > .mobile-toggle-btn {
+      display: block;
+      font-size: 1.5rem;
+
+      .mobile-toggle-btn-input {
+        appearance: none;
+      }
+    }
+
+    > ul.menu {
+      &:has(+ .mobile-toggle-btn .mobile-toggle-btn-input:not(:checked)) {
+        display: none;
+      }
+
+      &:has(+ .mobile-toggle-btn .mobile-toggle-btn-input:checked) {
+        position: absolute;
+        padding: 1rem;
+        right: 0;
+        top: 74px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        align-content: space-around;
+        gap: 2rem;
+        flex-wrap: wrap;
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  main {
+    > section {
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 5vw;
+    }
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}
