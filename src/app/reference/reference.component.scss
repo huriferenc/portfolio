@@ -29,38 +29,6 @@ section {
         height: 3rem;
       }
 
-      > .preview {
-        position: relative;
-
-        > img {
-          width: 100%;
-          max-height: 145px;
-          object-fit: contain;
-        }
-
-        > .hover-item {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          opacity: 0;
-
-          &:hover {
-            opacity: 1;
-            background-color: hsla(0, 0%, 0%, 0.75);
-          }
-
-          > button > i {
-            font-size: 3rem;
-          }
-        }
-      }
-
       > p.description {
         height: 7rem;
         text-align: right;
@@ -99,10 +67,10 @@ section {
           background-color: #fff;
           color: #333;
           text-align: center;
-        }
 
-        > .btn--disabled {
-          opacity: 0.4;
+          &.disabled {
+            opacity: 0.4;
+          }
         }
 
         > .btn--primary {
@@ -112,6 +80,47 @@ section {
         > .btn--secondary {
           background-color: $card-secondary-color;
         }
+      }
+    }
+  }
+}
+
+/***************************/
+/*** Lightgallery styles ***/
+/***************************/
+lightgallery {
+  > a {
+    display: none;
+    position: relative;
+
+    &.active {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      max-height: 145px;
+    }
+
+    > .hover-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+        background-color: hsla(0, 0%, 0%, 0.75);
+      }
+
+      > button > i {
+        font-size: 3rem;
       }
     }
   }

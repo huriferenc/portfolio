@@ -1,3 +1,5 @@
+@import 'lightgallery/scss/lightgallery.scss';
+
 $primary-color: hsl(216, 100%, 15%);
 $secondary-color: hsl(216, 100%, 23%);
 $font-color: hsl(217, 6%, 74%);
@@ -47,7 +49,8 @@ a {
   text-decoration: none;
   color: $font-color;
 
-  &:disabled {
+  &:disabled,
+  &.disabled {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
@@ -198,5 +201,21 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
+  }
+}
+
+/***************************/
+/*** Lightgallery styles ***/
+/***************************/
+span.icon-item {
+  --icon-size: 2rem;
+
+  > i {
+    font-size: var(--icon-size);
+    color: hsl(255, 98%, 80%);
+  }
+
+  > img {
+    width: var(--icon-size);
   }
 }

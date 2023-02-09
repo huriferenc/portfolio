@@ -1,120 +1,56 @@
 <section class="web-applications" id="web-applications">
   <h1>Web Applications</h1>
   <div class="app-list">
-    <article class="app-item">
-      <h4 class="title">Energy Management System</h4>
-      <div class="preview">
-        <div class="hover-item">
-          <button type="button" data-modal="true" data-gallery="ems">
-            <i class="fa-solid fa-image"></i>
-          </button>
-        </div>
-        <img alt="EMS image" src="/assets/img/reference/ems-02.png" />
-      </div>
-      <p class="description">
-        An Energy Management System (EMS) web-application that helps companies or institutions
-        optimize their energy usage.
-      </p>
-      <div class="skill-list">
-        <span>
-          <i title="Angular" class="fa-brands fa-angular fa-fw"></i>
-        </span>
-        <span>
-          <img title="RxJs" src="./assets/img/rxjs.svg" />
-        </span>
-
-        <span>
-          <img title="TypeScript" src="./assets/img/ts.svg" />
-        </span>
-        <span>
-          <i title="Sass" class="fa-brands fa-sass fa-fw"></i>
-        </span>
-      </div>
-      <div class="links">
-        <a class="btn btn--primary btn--disabled" disabled
-          ><i class="fa-brands fa-github fa-fw"></i
-        ></a>
-        <a class="btn btn--secondary btn--disabled" disabled
-          ><i class="fa-solid fa-arrow-up-right-from-square"></i
-        ></a>
-      </div>
-    </article>
-    <article class="app-item">
-      <h4 class="title" class="title">Exalon Translation Agency</h4>
-      <div class="preview">
-        <div class="hover-item">
-          <button type="button" data-modal="true" data-gallery="ex">
-            <i class="fa-solid fa-image"></i>
-          </button>
-        </div>
-        <img alt="Exalon image" src="/assets/img/reference/ex-01.png" />
-      </div>
-      <p class="description">A CodeIgniter-based interpretation and translation application.</p>
-      <div class="skill-list">
-        <span>
-          <img title="CodeIgniter" src="./assets/img/codeigniter.svg" />
-        </span>
-        <span>
-          <i title="PHP" class="fa-brands fa-php"></i>
-        </span>
-        <span>
-          <i title="JavaScript" class="fa-brands fa-square-js fa-fw"></i>
-        </span>
-        <span>
-          <i title="HTML5" class="fa-brands fa-html5 fa-fw"></i>
-        </span>
-      </div>
-      <div class="links">
-        <a class="btn btn--primary btn--disabled" disabled
-          ><i class="fa-brands fa-github fa-fw"></i
-        ></a>
-        <a class="btn btn--secondary" target="_blank" href="https://exalon.hu"
-          ><i class="fa-solid fa-arrow-up-right-from-square"></i
-        ></a>
-      </div>
-    </article>
+    <ng-container *ngFor="let item of webApps">
+      <ng-container *ngTemplateOutlet="appTemplate; context: { $implicit: item }"></ng-container>
+    </ng-container>
   </div>
 </section>
 <section class="mobile-applications" id="mobile-applications">
   <h1>Mobile Applications</h1>
   <div class="app-list">
-    <article class="app-item">
-      <h4 class="title">Tenancy Tracker by Foxtons</h4>
-      <div class="preview">
-        <div class="hover-item">
-          <button type="button" data-modal="true" data-gallery="tenant">
-            <i class="fa-solid fa-image"></i>
-          </button>
-        </div>
-        <img alt="Tenancy Tracker image" src="/assets/img/reference/tenant-03.png" />
-      </div>
-      <p class="description">A React-Native-based tenant application for Foxtons</p>
-      <div class="skill-list">
-        <span>
-          <i title="React-Native" class="fa-brands fa-react fa-fw"></i>
-        </span>
-        <span>
-          <img title="Redux" src="./assets/img/redux.svg" />
-        </span>
-
-        <span>
-          <img title="TypeScript" src="./assets/img/ts.svg" />
-        </span>
-        <span>
-          <i title="HTML5" class="fa-brands fa-html5 fa-fw"></i>
-        </span>
-      </div>
-      <div class="links">
-        <a class="btn btn--primary btn--disabled" disabled
-          ><i class="fa-brands fa-github fa-fw"></i
-        ></a>
-        <a
-          class="btn btn--secondary"
-          target="_blank"
-          href="https://www.foxtons.co.uk/myfoxtons/tenants"
-          ><i class="fa-solid fa-arrow-up-right-from-square"></i
-        ></a>
-      </div>
-    </article>
+    <ng-container *ngFor="let item of mobileApps">
+      <ng-container *ngTemplateOutlet="appTemplate; context: { $implicit: item }"></ng-container>
+    </ng-container>
   </div>
 </section>
+
+<ng-template #appTemplate let-app>
+  <article class="app-item">
+    <h4 class="title">{{ app.title }}</h4>
+    <div class="preview">
+      <lightgallery [settings]="imageGallerySettings">
+        <a *ngFor="let img of app.images" [ngClass]="{ active: img.active }" [attr.href]="img.src">
+          <div class="hover-item">
+            <button type="button"><i class="fa-solid fa-image"></i></button>
+          </div>
+          <img src="{{ img.thumb }}" />
+        </a>
+      </lightgallery>
+    </div>
+    <p class="description">{{ app.desc }}</p>
+    <div class="skill-list">
+      <span
+        *ngFor="let skill of app.skills"
+        class="icon-item"
+        [innerHTML]="skillIcons[skill]"
+      ></span>
+    </div>
+    <div class="links">
+      <a
+        class="btn btn--primary"
+        [href]="app.primaryButton.href"
+        [ngClass]="{ disabled: app.primaryButton.disabled }"
+        [attr.disabled]="app.primaryButton.disabled"
+        ><i class="fa-brands fa-github fa-fw"></i
+      ></a>
+      <a
+        class="btn btn--secondary"
+        [href]="app.secondaryButton.href"
+        [ngClass]="{ disabled: app.secondaryButton.disabled }"
+        [attr.disabled]="app.secondaryButton.disabled"
+        ><i class="fa-solid fa-arrow-up-right-from-square"></i
+      ></a>
+    </div>
+  </article>
+</ng-template>
