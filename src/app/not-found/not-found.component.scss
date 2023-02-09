@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+span {
+  color: hsl(217deg 6% 74% / 57%);
+
+  &.title {
+    font-size: 4rem;
+  }
+
+  &.message {
+    font-size: 1.4rem;
+  }
+}
