@@ -10,7 +10,9 @@ export class ReferenceComponent implements OnInit {
   skillIcons = SKILL_ICONS;
 
   imageGallerySettings = {
-    thumbnail: false
+    thumbnail: false,
+    download: false,
+    share: false
   };
 
   webApps = [
@@ -73,6 +75,7 @@ export class ReferenceComponent implements OnInit {
       title: 'Tenancy Tracker by Foxtons',
       images: [
         {
+          active: true,
           src: '/assets/img/reference/tenant-01.png',
           thumb: '/assets/img/reference/tenant-01.png'
         },
@@ -81,7 +84,6 @@ export class ReferenceComponent implements OnInit {
           thumb: '/assets/img/reference/tenant-02.png'
         },
         {
-          active: true,
           src: '/assets/img/reference/tenant-03.png',
           thumb: '/assets/img/reference/tenant-03.png'
         },

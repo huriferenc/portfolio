@@ -90,17 +90,7 @@ section {
 /***************************/
 lightgallery {
   > a {
-    display: none;
     position: relative;
-
-    &.active {
-      display: block;
-    }
-
-    img {
-      width: 100%;
-      max-height: 145px;
-    }
 
     > .hover-item {
       position: absolute;

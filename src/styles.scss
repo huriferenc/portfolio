@@ -205,7 +205,7 @@ footer {
 }
 
 /***************************/
-/*** Lightgallery styles ***/
+/*** Skill icon styles ***/
 /***************************/
 span.icon-item {
   --icon-size: 2rem;
@@ -217,5 +217,24 @@ span.icon-item {
 
   > img {
     width: var(--icon-size);
+  }
+}
+
+/***************************/
+/*** Lightgallery styles ***/
+/***************************/
+lightgallery {
+  > a {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      max-height: 145px;
+      object-fit: contain;
+    }
   }
 }
