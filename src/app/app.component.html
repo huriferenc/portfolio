@@ -1,60 +1,64 @@
-<nav>
-  <a routerLink="/" class="logo">
-    <img src="/assets/img/logo.png" alt="Logo image" class="logo-image" />
-    <span>HugEx</span>
-  </a>
-  <ul class="menu">
-    <li class="menu-item">
-      <a href="/#about-me" class="menu-link link-icon"
-        ><i class="fa-regular fa-user"></i><span>About me</span></a
-      >
-    </li>
-    <li class="menu-item">
-      <a href="/#skills" class="menu-link link-icon">
-        <i class="fa-solid fa-circle-nodes"></i>
-        <span>Skills</span></a
-      >
-    </li>
-    <li class="menu-item">
-      <a routerLink="/reference" class="menu-link link-icon">
-        <i class="fa-sharp fa-solid fa-briefcase"></i>
-        <span>Reference works</span></a
-      >
-    </li>
-    <!-- <li class="menu-item">
+<article class="container">
+  <nav>
+    <a routerLink="/" class="logo">
+      <img src="/assets/img/logo.png" alt="Logo image" class="logo-image" />
+      <span>HugEx</span>
+    </a>
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="/#about-me" class="menu-link link-icon"
+          ><i class="fa-regular fa-user"></i><span>About me</span></a
+        >
+      </li>
+      <li class="menu-item">
+        <a href="/#skills" class="menu-link link-icon">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <span>Skills</span></a
+        >
+      </li>
+      <li class="menu-item">
+        <a routerLink="/reference" class="menu-link link-icon">
+          <i class="fa-sharp fa-solid fa-briefcase"></i>
+          <span>Reference works</span></a
+        >
+      </li>
+      <!-- <li class="menu-item">
         <a href="/#!" class="menu-link link-icon">
           <i class="fa-regular fa-comment-dots"></i>
           <span>Contact</span>
         </a>
       </li> -->
-  </ul>
-  <div class="mobile-toggle-btn">
-    <label>
-      <input class="mobile-toggle-btn-input" type="checkbox" /><span
-        ><i class="fa-solid fa-bars"></i
-      ></span>
-    </label>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>
-
-<footer>
-  <aside class="signature">
-    <div>
-      <a routerLink="/" class="logo">
-        <img src="/assets/img/logo.png" alt="Logo image" class="logo-image" />
-        <span>HugEx</span>
-      </a>
+    </ul>
+    <div class="mobile-toggle-btn">
+      <label>
+        <input class="mobile-toggle-btn-input" type="checkbox" /><span
+          ><i class="fa-solid fa-bars"></i
+        ></span>
+      </label>
     </div>
-    <div>© 2022 Ferenc Huri.</div>
-  </aside>
-  <aside class="links">
-    <a target="_blank" href="https://www.linkedin.com/in/ferenc-huri-1078b0147"
-      ><i class="fa-brands fa-linkedin"></i
-    ></a>
-    <a target="_blank" href="https://github.com/huriferenc"
-      ><i class="fa-brands fa-github fa-fw"></i
-    ></a>
-  </aside>
-</footer>
+  </nav>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <aside class="signature">
+      <div>
+        <a routerLink="/" class="logo">
+          <img src="/assets/img/logo.png" alt="Logo image" class="logo-image" />
+          <span>HugEx</span>
+        </a>
+      </div>
+      <div>© 2022 Ferenc Huri.</div>
+    </aside>
+    <aside class="links">
+      <a target="_blank" href="https://www.linkedin.com/in/ferenc-huri-1078b0147"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a target="_blank" href="https://github.com/huriferenc"
+        ><i class="fa-brands fa-github fa-fw"></i
+      ></a>
+    </aside>
+  </footer>
+</article>

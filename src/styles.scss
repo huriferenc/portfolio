@@ -117,16 +117,13 @@ nav {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-left: 5vw;
   padding-right: 5vw;
+}
 
-  > section {
-    width: 100%;
-    min-height: 95vh;
-  }
+section {
+  width: 100%;
+  min-height: 95vh;
 }
 
 footer {

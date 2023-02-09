@@ -1,3 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 section {
   display: flex;
   flex-direction: row;
@@ -72,15 +78,23 @@ section.references {
 }
 
 @media screen and (max-width: 767px) {
-  main {
-    > section {
-      height: auto;
-      padding-bottom: 3rem;
+  section {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5vw;
+    height: auto;
 
-      > aside.image {
-        > img {
-          display: none;
-        }
+    &:not(.intro) {
+      padding-bottom: 3rem;
+    }
+
+    &:not(.intro) > aside.image > img {
+      display: none;
+    }
+
+    > aside.image {
+      > img {
+        display: none;
       }
     }
   }

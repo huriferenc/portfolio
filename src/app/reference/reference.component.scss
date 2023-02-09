@@ -1,7 +1,11 @@
 $card-primary-color: #00c5f7;
 $card-secondary-color: #64ffda;
 
-main {
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   padding-top: 3vw;
   padding-bottom: 3vw;
   gap: 5vw;
