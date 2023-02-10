@@ -15,6 +15,19 @@ section {
   display: block;
   min-height: auto;
 
+  > h1,
+  > .app-list {
+    position: relative;
+  }
+
+  > h1 {
+    animation: slideFromTop 2s forwards;
+  }
+
+  > .app-list {
+    animation: slideFromLeft 2s forwards;
+  }
+
   > .app-list {
     display: grid;
     grid-gap: 1rem;
@@ -82,6 +95,28 @@ section {
         }
       }
     }
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

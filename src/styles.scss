@@ -1,8 +1,8 @@
 @import 'lightgallery/scss/lightgallery.scss';
 
-$primary-color: hsl(216, 100%, 15%);
-$secondary-color: hsl(216, 100%, 23%);
-$font-color: hsl(217, 6%, 74%);
+@import 'responsive-mixins';
+
+@import 'colors';
 
 *,
 *::before,
@@ -154,7 +154,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 767px) {
+@include tablet-mobile-size {
   nav {
     justify-content: space-between;
 

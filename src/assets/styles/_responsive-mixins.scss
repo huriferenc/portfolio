@@ -1,0 +1,11 @@
+@mixin tablet-mobile-size {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile-landscape {
+  @media only screen and (min-device-width: 480px) and (max-device-width: 767px) and (orientation: landscape) {
+    @content;
+  }
+}

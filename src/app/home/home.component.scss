@@ -1,3 +1,5 @@
+@import 'responsive-mixins';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -13,34 +15,44 @@ section {
 
   > aside.image,
   > aside.details {
+    position: relative;
     opacity: 0;
   }
 
   > aside.image {
+    transform: translateY(-50%);
+
     > img {
       width: 20vw;
     }
   }
 
+  > aside.details {
+    transform: translateY(50%);
+  }
+
   &.visible {
     > aside.image {
-      opacity: 1;
-      animation: fadein 5s;
+      animation: slideFromTop 2s forwards;
     }
 
     > aside.details {
-      opacity: 1;
-      animation: fadein 5s;
+      animation: slideFromBottom 2s forwards;
     }
   }
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
+@keyframes slideFromTop {
+  100% {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -103,7 +115,7 @@ section.references {
   }
 }
 
-@media screen and (max-width: 767px) {
+@include tablet-mobile-size {
   section {
     flex-direction: column;
     justify-content: space-evenly;
@@ -126,7 +138,7 @@ section.references {
   }
 }
 
-@media only screen and (min-device-width: 480px) and (max-device-width: 767px) and (orientation: landscape) {
+@include tablet-mobile-landscape {
   section.intro {
     display: flex;
     flex-direction: row;
