@@ -11,10 +11,36 @@ section {
   align-items: center;
   gap: 10vw;
 
+  > aside.image,
+  > aside.details {
+    opacity: 0;
+  }
+
   > aside.image {
     > img {
       width: 20vw;
     }
+  }
+
+  &.visible {
+    > aside.image {
+      opacity: 1;
+      animation: fadein 5s;
+    }
+
+    > aside.details {
+      opacity: 1;
+      animation: fadein 5s;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
