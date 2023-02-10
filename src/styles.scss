@@ -101,6 +101,9 @@ nav {
   background-color: $secondary-color;
   box-shadow: 0 1px 10px #0000001f, 0 4px 5px #00000024;
 
+  position: relative;
+  animation: slideFromTop 0.5s forwards;
+
   a {
     font-weight: 500;
   }
@@ -116,6 +119,17 @@ nav {
     gap: 3rem;
     align-items: center;
     list-style: none;
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
