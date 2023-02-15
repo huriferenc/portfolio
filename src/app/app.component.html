@@ -1,5 +1,5 @@
 <article class="container">
-  <nav>
+  <nav class="desktop">
     <a routerLink="/" class="logo">
       <img src="/assets/img/logo.png" alt="Logo image" class="logo-image" />
       <span>HugEx</span>
@@ -22,20 +22,35 @@
           <span>Reference works</span></a
         >
       </li>
-      <!-- <li class="menu-item">
-        <a href="/#!" class="menu-link link-icon">
-          <i class="fa-regular fa-comment-dots"></i>
-          <span>Contact</span>
-        </a>
-      </li> -->
     </ul>
-    <div class="mobile-toggle-btn">
-      <label>
-        <input class="mobile-toggle-btn-input" type="checkbox" /><span
-          ><i class="fa-solid fa-bars"></i
-        ></span>
-      </label>
-    </div>
+  </nav>
+  <nav class="mobile">
+    <label class="hamburger-menu">
+      <input type="checkbox" />
+    </label>
+    <aside class="sidebar">
+      <nav>
+        <ul class="menu">
+          <li class="menu-item">
+            <a routerLink="/" fragment="about-me" class="menu-link link-icon"
+              ><i class="fa-regular fa-user"></i><span>About me</span></a
+            >
+          </li>
+          <li class="menu-item">
+            <a routerLink="/" fragment="skills" class="menu-link link-icon">
+              <i class="fa-solid fa-circle-nodes"></i>
+              <span>Skills</span></a
+            >
+          </li>
+          <li class="menu-item">
+            <a routerLink="/reference" class="menu-link link-icon">
+              <i class="fa-sharp fa-solid fa-briefcase"></i>
+              <span>Reference works</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
   </nav>
 
   <main>
