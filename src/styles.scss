@@ -206,6 +206,15 @@ nav.mobile {
         flex-direction: column;
         gap: 2rem;
         align-items: flex-start;
+
+        > li.menu-item.links {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: center;
+          gap: 0.5rem;
+          font-size: 1.5rem;
+        }
       }
     }
   }
