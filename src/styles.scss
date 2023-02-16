@@ -92,6 +92,16 @@ a.logo {
   }
 }
 
+article.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 nav {
   a {
     font-weight: 500;
@@ -107,23 +117,23 @@ nav {
 }
 
 nav.mobile {
-  $bar-width: 60px;
-  $bar-height: 8px;
-  $hamburger-gap: 6px;
+  $toggle-bar-width: 55px;
+  $toggle-bar-height: 6px;
+  $mobile-toggle-gap: 6px;
   $foreground: white;
   $background: hsl(216deg 92% 4%);
-  $hamburger-margin: 8px;
+  $mobile-toggle-margin: 8px;
   $animation-timing: 200ms ease-in-out;
-  $hamburger-height: calc($bar-height * 3 + $hamburger-gap * 2);
+  $mobile-toggle-height: calc($toggle-bar-height * 3 + $mobile-toggle-gap * 2);
 
   display: none;
 
-  position: absolute;
+  position: fixed;
   right: 0;
   z-index: 1;
 
-  .hamburger-menu {
-    $x-width: calc($hamburger-height * 1.41421356237);
+  .mobile-menu {
+    $x-width: calc($mobile-toggle-height * 1.41421356237);
 
     display: flex;
     flex-direction: column;
@@ -146,8 +156,8 @@ nav.mobile {
     &::after,
     input {
       content: '';
-      width: $bar-width;
-      height: $bar-height;
+      width: $toggle-bar-width;
+      height: $toggle-bar-height;
       background-color: $foreground;
       border-radius: 9999px;
       transform-origin: left center;
@@ -166,13 +176,13 @@ nav.mobile {
     &:has(input:checked)::before {
       rotate: 45deg;
       width: $x-width;
-      translate: 0 calc($bar-height / -2);
+      translate: 0 calc($toggle-bar-height / -2);
     }
 
     &:has(input:checked)::after {
       rotate: -45deg;
       width: $x-width;
-      translate: 0 calc($bar-height / 2);
+      translate: 0 calc($toggle-bar-height / 2);
     }
 
     input:checked {
@@ -185,7 +195,7 @@ nav.mobile {
     transition: translate $animation-timing;
     translate: 100%;
     padding: 0.5rem 1rem;
-    padding-top: calc($hamburger-height + $hamburger-margin + 3rem);
+    padding-top: calc($mobile-toggle-height + $mobile-toggle-margin + 3rem);
     background-color: $background;
     color: $foreground;
     width: 13rem;
@@ -200,7 +210,7 @@ nav.mobile {
     }
   }
 
-  .hamburger-menu:has(input:checked) + .sidebar {
+  .mobile-menu:has(input:checked) + .sidebar {
     translate: 0;
   }
 }
