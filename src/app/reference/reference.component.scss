@@ -20,12 +20,14 @@ section {
     position: relative;
   }
 
-  > h1 {
-    animation: slideFromTop 2s forwards;
-  }
+  &.visible {
+    > h1 {
+      animation: slideFromTop 2s forwards;
+    }
 
-  > .app-list {
-    animation: slideFromLeft 2s forwards;
+    > .app-list {
+      animation: slideFromLeft 2s forwards;
+    }
   }
 
   > .app-list {

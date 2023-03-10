@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { filter, Subject, takeUntil } from 'rxjs';
+import { IntersectionObserverService } from '../home/intersection-observer.service';
 import { SKILL_ICONS } from './skill-icons';
 
 @Component({
@@ -6,7 +8,10 @@ import { SKILL_ICONS } from './skill-icons';
   templateUrl: './reference.component.html',
   styleUrls: ['./reference.component.scss']
 })
-export class ReferenceComponent implements OnInit {
+export class ReferenceComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('webAppList', { read: ElementRef }) webAppList: ElementRef;
+  @ViewChild('mobileAppList', { read: ElementRef }) mobileAppList: ElementRef;
+
   skillIcons = SKILL_ICONS;
 
   imageGallerySettings = {
@@ -113,7 +118,34 @@ export class ReferenceComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  private onDestroy$ = new Subject<void>();
 
-  ngOnInit() {}
+  constructor(private intersectionObserver: IntersectionObserverService) {}
+
+  ngAfterViewInit() {
+    this.intersectionObserver
+      .createAndObserve(this.webAppList)
+      .pipe(
+        takeUntil(this.onDestroy$),
+        filter((isVisible: boolean) => isVisible)
+      )
+      .subscribe(() => {
+        this.webAppList.nativeElement.classList.add('visible');
+      });
+
+    this.intersectionObserver
+      .createAndObserve(this.mobileAppList)
+      .pipe(
+        takeUntil(this.onDestroy$),
+        filter((isVisible: boolean) => isVisible)
+      )
+      .subscribe(() => {
+        this.mobileAppList.nativeElement.classList.add('visible');
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
+  }
 }
