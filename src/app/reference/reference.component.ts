@@ -11,6 +11,7 @@ import { SKILL_ICONS } from './skill-icons';
 export class ReferenceComponent implements AfterViewInit, OnDestroy {
   @ViewChild('webAppList', { read: ElementRef }) webAppList: ElementRef;
   @ViewChild('mobileAppList', { read: ElementRef }) mobileAppList: ElementRef;
+  @ViewChild('simulatorAppList', { read: ElementRef }) simulatorAppList: ElementRef;
 
   skillIcons = SKILL_ICONS;
 
@@ -26,16 +27,16 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
       images: [
         {
           src: '/assets/img/reference/ems-01.png',
-          thumb: '/assets/img/reference/ems-01.png'
+          thumb: '/assets/img/reference/ems-thumb-01.png'
         },
         {
           active: true,
           src: '/assets/img/reference/ems-02.png',
-          thumb: '/assets/img/reference/ems-02.png'
+          thumb: '/assets/img/reference/ems-thumb-02.png'
         },
         {
           src: '/assets/img/reference/ems-03.png',
-          thumb: '/assets/img/reference/ems-03.png'
+          thumb: '/assets/img/reference/ems-thumb-03.png'
         }
       ],
       desc: 'An Energy Management System (EMS) web-application that helps companies or institutions optimize their energy usage.',
@@ -55,11 +56,11 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
         {
           active: true,
           src: '/assets/img/reference/ex-01.png',
-          thumb: '/assets/img/reference/ex-01.png'
+          thumb: '/assets/img/reference/ex-thumb-01.png'
         },
         {
           src: '/assets/img/reference/ex-02.png',
-          thumb: '/assets/img/reference/ex-02.png'
+          thumb: '/assets/img/reference/ex-thumb-02.png'
         }
       ],
       desc: 'A CodeIgniter-based interpretation and translation application.',
@@ -82,27 +83,27 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
         {
           active: true,
           src: '/assets/img/reference/tenant-01.png',
-          thumb: '/assets/img/reference/tenant-01.png'
+          thumb: '/assets/img/reference/tenant-thumb-01.png'
         },
         {
           src: '/assets/img/reference/tenant-02.png',
-          thumb: '/assets/img/reference/tenant-02.png'
+          thumb: '/assets/img/reference/tenant-thumb-02.png'
         },
         {
           src: '/assets/img/reference/tenant-03.png',
-          thumb: '/assets/img/reference/tenant-03.png'
+          thumb: '/assets/img/reference/tenant-thumb-03.png'
         },
         {
           src: '/assets/img/reference/tenant-04.png',
-          thumb: '/assets/img/reference/tenant-04.png'
+          thumb: '/assets/img/reference/tenant-thumb-04.png'
         },
         {
           src: '/assets/img/reference/tenant-05.png',
-          thumb: '/assets/img/reference/tenant-05.png'
+          thumb: '/assets/img/reference/tenant-thumb-05.png'
         },
         {
           src: '/assets/img/reference/tenant-06.png',
-          thumb: '/assets/img/reference/tenant-06.png'
+          thumb: '/assets/img/reference/tenant-thumb-06.png'
         }
       ],
       desc: 'A React-Native-based tenant application for Foxtons',
@@ -114,6 +115,37 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
       secondaryButton: {
         disabled: false,
         href: 'https://www.foxtons.co.uk/myfoxtons/tenants'
+      }
+    }
+  ];
+
+  simulatorApps = [
+    {
+      title: 'Topter Simulator ',
+      images: [
+        {
+          active: true,
+          src: '/assets/img/reference/topter-01.png',
+          thumb: '/assets/img/reference/topter-thumb-01.png'
+        },
+        {
+          src: '/assets/img/reference/topter-02.png',
+          thumb: '/assets/img/reference/topter-thumb-02.png'
+        },
+        {
+          src: '/assets/img/reference/topter-03.png',
+          thumb: '/assets/img/reference/topter-thumb-03.png'
+        }
+      ],
+      desc: 'Three.js-based 3D simulator',
+      skills: ['three.js', 'js', 'css', 'html5'],
+      primaryButton: {
+        disabled: false,
+        href: 'https://github.com/huriferenc/topter'
+      },
+      secondaryButton: {
+        disabled: false,
+        href: 'https://huriferenc.github.io/topter/'
       }
     }
   ];
@@ -141,6 +173,16 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
       )
       .subscribe(() => {
         this.mobileAppList.nativeElement.classList.add('visible');
+      });
+
+    this.intersectionObserver
+      .createAndObserve(this.simulatorAppList)
+      .pipe(
+        takeUntil(this.onDestroy$),
+        filter((isVisible: boolean) => isVisible)
+      )
+      .subscribe(() => {
+        this.simulatorAppList.nativeElement.classList.add('visible');
       });
   }
 

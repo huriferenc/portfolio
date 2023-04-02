@@ -14,6 +14,14 @@
     </ng-container>
   </div>
 </section>
+<section #simulatorAppList class="simulators" id="simulators">
+  <h1>Simulators</h1>
+  <div class="app-list">
+    <ng-container *ngFor="let item of simulatorApps">
+      <ng-container *ngTemplateOutlet="appTemplate; context: { $implicit: item }"></ng-container>
+    </ng-container>
+  </div>
+</section>
 
 <ng-template #appTemplate let-app>
   <article class="app-item">
