@@ -9,11 +9,16 @@ export class IntersectionObserverService {
 
   constructor() {}
 
-  createAndObserve(element: ElementRef): Observable<boolean> {
+  createAndObserve(element: ElementRef, visibilityRatio?: number): Observable<boolean> {
     return new Observable((observer) => {
-      const intersectionObserver = new IntersectionObserver((entries) => {
-        observer.next(entries);
-      });
+      const intersectionObserver = new IntersectionObserver(
+        (entries) => {
+          observer.next(entries);
+        },
+        {
+          threshold: visibilityRatio
+        }
+      );
 
       intersectionObserver.observe(element.nativeElement);
 
@@ -22,7 +27,7 @@ export class IntersectionObserverService {
       };
     }).pipe(
       mergeMap((entries: IntersectionObserverEntry[]) => entries),
-      map((entry) => entry.isIntersecting && entry.intersectionRatio === 0),
+      map((entry) => entry.isIntersecting),
       distinctUntilChanged()
     );
   }

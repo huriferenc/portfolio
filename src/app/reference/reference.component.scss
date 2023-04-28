@@ -18,6 +18,15 @@ section {
   > h1,
   > .app-list {
     position: relative;
+    opacity: 0;
+  }
+
+  > h1 {
+    transform: translateY(-50%);
+  }
+
+  > .app-list {
+    transform: translateX(-100%);
   }
 
   &.visible {
@@ -101,10 +110,6 @@ section {
 }
 
 @keyframes slideFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-50%);
-  }
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -112,10 +117,6 @@ section {
 }
 
 @keyframes slideFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
   100% {
     opacity: 1;
     transform: translateX(0);

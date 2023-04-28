@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { IntersectionObserverService } from '../home/intersection-observer.service';
 import { SKILL_ICONS } from './skill-icons';
@@ -8,10 +8,12 @@ import { SKILL_ICONS } from './skill-icons';
   templateUrl: './reference.component.html',
   styleUrls: ['./reference.component.scss']
 })
-export class ReferenceComponent implements AfterViewInit, OnDestroy {
+export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('webAppList', { read: ElementRef }) webAppList: ElementRef;
   @ViewChild('mobileAppList', { read: ElementRef }) mobileAppList: ElementRef;
   @ViewChild('simulatorAppList', { read: ElementRef }) simulatorAppList: ElementRef;
+
+  private sectionVisibilityRatio = 0.8;
 
   skillIcons = SKILL_ICONS;
 
@@ -154,9 +156,17 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
 
   constructor(private intersectionObserver: IntersectionObserverService) {}
 
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
+
   ngAfterViewInit() {
+    this.webAppList.nativeElement.classList.remove('visible');
+    this.mobileAppList.nativeElement.classList.remove('visible');
+    this.simulatorAppList.nativeElement.classList.remove('visible');
+
     this.intersectionObserver
-      .createAndObserve(this.webAppList)
+      .createAndObserve(this.webAppList, this.sectionVisibilityRatio)
       .pipe(
         takeUntil(this.onDestroy$),
         filter((isVisible: boolean) => isVisible)
@@ -166,7 +176,7 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
       });
 
     this.intersectionObserver
-      .createAndObserve(this.mobileAppList)
+      .createAndObserve(this.mobileAppList, this.sectionVisibilityRatio)
       .pipe(
         takeUntil(this.onDestroy$),
         filter((isVisible: boolean) => isVisible)
@@ -176,7 +186,7 @@ export class ReferenceComponent implements AfterViewInit, OnDestroy {
       });
 
     this.intersectionObserver
-      .createAndObserve(this.simulatorAppList)
+      .createAndObserve(this.simulatorAppList, this.sectionVisibilityRatio)
       .pipe(
         takeUntil(this.onDestroy$),
         filter((isVisible: boolean) => isVisible)
