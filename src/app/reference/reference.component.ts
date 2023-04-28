@@ -13,7 +13,7 @@ export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('mobileAppList', { read: ElementRef }) mobileAppList: ElementRef;
   @ViewChild('simulatorAppList', { read: ElementRef }) simulatorAppList: ElementRef;
 
-  private sectionVisibilityRatio = 0.75;
+  private sectionVisibilityRatio = 0.7;
 
   skillIcons = SKILL_ICONS;
 
