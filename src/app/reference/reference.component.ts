@@ -13,8 +13,6 @@ export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('mobileAppList', { read: ElementRef }) mobileAppList: ElementRef;
   @ViewChild('simulatorAppList', { read: ElementRef }) simulatorAppList: ElementRef;
 
-  private sectionVisibilityRatio = 0.7;
-
   skillIcons = SKILL_ICONS;
 
   imageGallerySettings = {
@@ -166,7 +164,7 @@ export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
     this.simulatorAppList.nativeElement.classList.remove('visible');
 
     this.intersectionObserver
-      .createAndObserve(this.webAppList, this.sectionVisibilityRatio)
+      .createAndObserve(this.webAppList)
       .pipe(
         takeUntil(this.onDestroy$),
         filter((isVisible: boolean) => isVisible)
@@ -176,7 +174,7 @@ export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
       });
 
     this.intersectionObserver
-      .createAndObserve(this.mobileAppList, this.sectionVisibilityRatio)
+      .createAndObserve(this.mobileAppList)
       .pipe(
         takeUntil(this.onDestroy$),
         filter((isVisible: boolean) => isVisible)
@@ -186,7 +184,7 @@ export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
       });
 
     this.intersectionObserver
-      .createAndObserve(this.simulatorAppList, this.sectionVisibilityRatio)
+      .createAndObserve(this.simulatorAppList)
       .pipe(
         takeUntil(this.onDestroy$),
         filter((isVisible: boolean) => isVisible)
