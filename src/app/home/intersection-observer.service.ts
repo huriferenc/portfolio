@@ -22,7 +22,7 @@ export class IntersectionObserverService {
       };
     }).pipe(
       mergeMap((entries: IntersectionObserverEntry[]) => entries),
-      map((entry) => entry.isIntersecting),
+      map((entry) => entry.isIntersecting && entry.intersectionRatio === 0),
       distinctUntilChanged()
     );
   }
