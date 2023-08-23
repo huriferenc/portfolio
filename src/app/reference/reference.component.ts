@@ -73,6 +73,30 @@ export class ReferenceComponent implements OnInit, AfterViewInit, OnDestroy {
         disabled: false,
         href: 'https://exalon.hu'
       }
+    },
+    {
+      title: 'Portfolio with Lemon',
+      images: [
+        {
+          active: true,
+          src: '/assets/img/reference/lemon-01.png',
+          thumb: '/assets/img/reference/lemon-thumb-01.png'
+        },
+        {
+          src: '/assets/img/reference/lemon-02.png',
+          thumb: '/assets/img/reference/lemon-thumb-02.png'
+        }
+      ],
+      desc: 'A portfolio page built with React',
+      skills: ['react', 'redux', 'ts', 'html5'],
+      primaryButton: {
+        disabled: true,
+        href: null
+      },
+      secondaryButton: {
+        disabled: false,
+        href: 'https://portfolio-rc.onrender.com'
+      }
     }
   ];
 

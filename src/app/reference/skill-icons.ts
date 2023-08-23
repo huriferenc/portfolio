@@ -7,6 +7,7 @@ export const SKILL_ICONS = {
   php: '<i title="PHP" class="fa-brands fa-php"></i>',
   js: '<i title="JavaScript" class="fa-brands fa-square-js fa-fw"></i>',
   html5: '<i title="HTML5" class="fa-brands fa-html5 fa-fw"></i>',
+  react: '<i title="React.js" class="fa-brands fa-react fa-fw"></i>',
   'react-native': '<i title="React-Native" class="fa-brands fa-react fa-fw"></i>',
   redux: '<img title="Redux" src="./assets/img/redux.svg" />',
   css: '<i title="CSS3" class="fa-brands fa-css3-alt fa-fw"></i>',
