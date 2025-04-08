@@ -1,27 +1,8 @@
-# Portfolio
+Hello 👋 My name is Ferenc Huri
+===========================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+I graduated from the University of Szeged with a BSc degree in Computer Science in 2024, and since then I have been working as a full-stack developer.
 
-## Development server
+Since 2013, I have been involved in programming and web development, especially HTML, HTML5, CSS, CSS3, JavaScript, PHP and MySQL-based technologies, and for a while I also developed C#-based .NET softwares.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In the course of my previous work I have considered it important to work accurately, precisely, and to focus on customer-centric work. Good teamwork is essential to me. Thanks to my ability to integrate, my relationship with my colleagues was always good. To my work I'm loyal and with my knowledge I'm involved in the achievement of the set goals. In any situation I can find a solution and handle it properly. For my clients, I am always patient, understanding and helpful, and I have performed them with the utmost care and precision.
