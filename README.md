@@ -1,7 +1,7 @@
 Hello 👋 My name is Ferenc Huri
 ===========================
 
-I graduated from the University of Szeged with a BSc degree in Computer Science in 2024, and since then I have been working as a full-stack developer.
+I graduated from the University of Szeged with a BSc degree in Computer Science in 2024, and since then I have been working as a software developer.
 
 Since 2013, I have been involved in programming and web development, especially HTML, HTML5, CSS, CSS3, JavaScript, PHP and MySQL-based technologies, and for a while I also developed C#-based .NET softwares.
 
